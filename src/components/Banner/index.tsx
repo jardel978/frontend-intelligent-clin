@@ -9,7 +9,7 @@ import bannerImg4 from 'assets/images/image 4.png';
 import { ContainerBanner, ContainerImage, ContainerContent } from './styles';
 import { useEffect, useState } from 'react';
 import { ToggleImage } from './ToggleImage';
-import { TextoBanner } from 'components/TextoBanner';
+import { TextoBanner } from 'components/Banner/TextoBanner';
 
 
 export const Banner = () => {
