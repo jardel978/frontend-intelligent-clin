@@ -4,7 +4,8 @@ import { ContainerImage } from './styles';
 type ToggleTypeProps = {
     toggle: boolean;
     imagem: StaticImageData;
-    size: string;
+    width: string;
+    height: string;
     position: string;
     top: string;
     rgt: string;
@@ -13,11 +14,12 @@ type ToggleTypeProps = {
     delay: string;
 }
 
-export const ToggleImage = ({ toggle, imagem, size, position, top, rgt, bottom, left, delay }: ToggleTypeProps) => {
+export const ToggleImage = ({ toggle, imagem, width, height, position, top, rgt, bottom, left, delay }: ToggleTypeProps) => {
     return (
         <ContainerImage
             visivel={toggle}
-            size={size}
+            width={width}
+            height={height}
             position={position}
             top={top}
             rgt={rgt}
@@ -25,7 +27,7 @@ export const ToggleImage = ({ toggle, imagem, size, position, top, rgt, bottom, 
             left={left}
             delay={delay}
         >
-            <Image sizes={size} src={imagem} alt='' />
+            <Image layout='fill' src={imagem} alt='' />
         </ContainerImage>
     )
 };

@@ -20,25 +20,46 @@ export const ContainerTexto = styled.div<ContainerTextoProps>`
 
 type ParagrafoBannerProps = {
     visivel: boolean;
-    translateXInicial: string;
-    translateYInicial: string;
-    translateXFinal: string;
-    translateYFinal: string;
+    topInicial: string;
+    leftInicial: string;
+    topFinal: string;
+    leftFinal: string;
 }
 
 export const ParagrafoBanner = styled.p<ParagrafoBannerProps>`
-    animation: ${props => props.visivel ? 'animartexto 4s forwards' : ''};
-    transform: translate(${props => props.translateXInicial}, ${props => props.translateYInicial});
+    position: relative;
+    top: ${props => props.topInicial};
+    left: ${props => props.leftInicial};
+    font-size: 2.2rem;
+    animation: ${props => props.visivel ? 'animartexto 6s infinite ease-out' : ''};
     
+
     @keyframes animartexto {
         0% {
             opacity: 0;
             filter: blur(1);
-        }
-        100% {
+        } 40% {
             opacity: 1;
             filter: blur(0);
-            transform: translate(${props => props.translateXFinal}, ${props => props.translateYFinal});
+            top: ${props => props.topFinal};
+            left: ${props => props.leftFinal};
+        } 70% {
+            opacity: 1;
+            filter: blur(0);
+            top: ${props => props.topFinal};
+            left: ${props => props.leftFinal};
         }
+        100% {
+            opacity: 0;
+            filter: blur(1);
+        }
+    }
+
+    @media (max-width: 820px) {
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 396px) {
+        font-size: 1rem;
     }
 `;

@@ -9,15 +9,15 @@ export const TextoBanner = ({ toggle }: TextoBannerProps) => {
         <ContainerTexto visivel={toggle}>
             <ParagrafoBanner
                 visivel={toggle}
-                translateXInicial='-250px' translateYInicial='-10px'
-                translateXFinal='-50px' translateYFinal='-10px'
+                topInicial='-5%' leftInicial='-40%'
+                topFinal='-2%' leftFinal='-10%'
             >
                 Porque cuidar também
             </ParagrafoBanner>
             <ParagrafoBanner
                 visivel={toggle}
-                translateXInicial='250px' translateYInicial='10px'
-                translateXFinal='50px' translateYFinal='10px'
+                topInicial='5%' leftInicial='40%'
+                topFinal='2%' leftFinal='10%'
             >
                 é a base do nosso código!
             </ParagrafoBanner>

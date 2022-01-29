@@ -27,9 +27,9 @@ export const GlobalStyle = createGlobalStyle`
     background: var(---background);
     --webkit-font-smoothig: antialiased;
   }
-
+  
   body, input, textarea, select, button {
-    font: 400 1rem 'Poppins', sans-serif;
+    font: 400 1rem 'Rajdhani', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6, strong {

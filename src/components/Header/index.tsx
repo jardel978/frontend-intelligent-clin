@@ -1,13 +1,14 @@
-import { Container, Nav } from './styles';
+import { BtnLogin, ContainerHeader, Nav } from './styles';
 
 import Image from 'next/image';
 
 import signInImg from 'assets/icons/sign-in.svg';
+// import signInImg from 'assets/icons/sign-in2.svg';
 import logoImg from 'assets/logo.svg';
 
 export const Header = () => {
     return (
-        <Container>
+        <ContainerHeader>
             <Image src={logoImg} alt="Logo Intelligent Clin" />
             <Nav>
                 <li>
@@ -25,13 +26,11 @@ export const Header = () => {
                 <li>
                     <a href="#">Usar em minha clínica</a>
                 </li>
-                <li>
-                    <Image src={signInImg} alt="Fazer login" />
-                    <a href="#">
-                        Login
-                    </a>
-                </li>
+                <BtnLogin>
+                    <Image width={30} height={30} src={signInImg} alt="Fazer login" />
+                    <strong style={{marginLeft: '.3rem'}}>Login</strong>
+                </BtnLogin>
             </Nav>
-        </Container>
+        </ContainerHeader>
     )
 };

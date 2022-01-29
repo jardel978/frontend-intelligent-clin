@@ -4,7 +4,8 @@ import styled from "styled-components";
 interface ContainerImageProps {
     visivel: boolean;
     position: string;
-    size: string;
+    width: string;
+    height: string;
     top: string;
     rgt: string;
     bottom: string;
@@ -15,23 +16,27 @@ interface ContainerImageProps {
 export const ContainerImage = styled.div<ContainerImageProps>`
     visibility: ${props => props.visivel ? 'visible' : 'hidden'};
     position: ${props => props.position};
-    width: ${props => props.size};
+    width: ${props => props.width};
+    height: ${props => props.height};
     top: ${props => props.top};
     right: ${props => props.rgt};
     bottom: ${props => props.bottom};
     left: ${props => props.left};
-    animation: exibir 3s infinite alternate;
+    animation: exibir 6s infinite; 
     animation-delay: ${porps => porps.delay};
-    border: 1px red solid;
 
     @keyframes exibir {
-        from {
+        0% {
             opacity: 0;
             filter: blur(1);
         }
-        to {
+        50% {
             opacity: 1;
             filter: blur(0);
+        }
+        100% {
+            opacity: 0;
+            filter: blur(1);
         }
     }
 `;

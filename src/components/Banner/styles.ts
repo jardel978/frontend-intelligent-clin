@@ -1,11 +1,21 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const ContainerBanner = styled.div`
+    margin-top: 7rem;
     
+    @media (max-width: 1023px) {
+        margin-top: 12rem;
+    }
+
+    @media (max-width: 720px) {
+        margin-top: 19rem;
+    }
 `;
 
 export const ContainerImage = styled.div`
     position: relative;
+    width: 100vw;
+    padding: 1rem 0;
 `;
 
 export const ContainerContent = styled.div`
@@ -14,7 +24,6 @@ export const ContainerContent = styled.div`
     position: absolute;
     top: 12%;
     right: 17%;
-    border: 1px red solid;
-    width: 500px;
-    height: 250px;
+    width: 42%;
+    height: 87%;
 `;

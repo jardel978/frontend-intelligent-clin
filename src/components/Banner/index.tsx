@@ -2,7 +2,11 @@
 import Image from 'next/image';
 
 import capaImg from 'assets/images/capa2.png';
-import { Container, ContainerImage, ContainerContent } from './styles';
+import bannerImg1 from 'assets/images/image 1.png';
+import bannerImg2 from 'assets/images/image 2.png';
+import bannerImg3 from 'assets/images/image 3.png';
+import bannerImg4 from 'assets/images/image 4.png';
+import { ContainerBanner, ContainerImage, ContainerContent } from './styles';
 import { useEffect, useState } from 'react';
 import { ToggleImage } from './ToggleImage';
 import { TextoBanner } from 'components/TextoBanner';
@@ -18,42 +22,43 @@ export const Banner = () => {
 
     useEffect(() => {
       myTimeout;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [toggle]);
 
 
     return (
-        <Container>
+        <ContainerBanner>
             <ContainerImage>
-                <Image src={capaImg} alt='Capa' />
+                <Image layout='responsive' src={capaImg} alt='Capa' />
                 <ContainerContent>
                     <ToggleImage
                         toggle={toggle}
-                        imagem={capaImg}
-                        size='200px'
-                        position='absolute' top='10px' rgt='' bottom='100px' left='0' delay='0s'
-                    />
+                        imagem={bannerImg1}
+                        width='39%' height='30%'
+                        position='absolute' top='5%' rgt='' bottom='' left='' delay='0s'
+                        />
                     <ToggleImage
                         toggle={toggle}
-                        imagem={capaImg}
-                        size='300px'
-                        position='absolute' top='' rgt='' bottom='0' left='30px'delay='1s'
-                    />
+                        imagem={bannerImg2}
+                        width='40%' height='50%'
+                        position='absolute' top='0' rgt='15%' bottom='' left='' delay='0.125s'
+                        />
                     <ToggleImage
                         toggle={toggle}
-                        imagem={capaImg}
-                        size='300px'
-                        position='absolute' top='0' rgt='10px' bottom='' left='' delay='2s'
-                    />
+                        imagem={bannerImg3}
+                        width='40%' height='50%'
+                        position='absolute' top='42%' rgt='' bottom='' left='7%'delay='0.25s'
+                        />
                     <ToggleImage
                         toggle={toggle}
-                        imagem={capaImg}
-                        size='300px'
-                        position='absolute' top='50px' rgt='0' bottom='0' left='' delay='3s'
+                        imagem={bannerImg4}
+                        width='50%' height='50%'
+                        position='absolute' top='50%' rgt='0' bottom='0' left='' delay='0.5s'
                     />
                    <TextoBanner toggle={!toggle} />
                 </ContainerContent>
             </ContainerImage>
 
-        </Container>
+        </ContainerBanner>
     );
 };
