@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     --background: #E0E5E5;
     --texto-titulos: #39CCBB;
     --texto: #254040;
+    --texto-btn: #E0E5E5;
   }
 
   * {
@@ -33,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6, strong {
-    font-weight: 600;
+    font-weight: 500;
   }  
 
   button {

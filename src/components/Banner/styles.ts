@@ -14,7 +14,7 @@ export const ContainerBanner = styled.div`
 
 export const ContainerImage = styled.div`
     position: relative;
-    width: 100vw;
+    width: 100%;
     padding: 1rem 0;
 `;
 

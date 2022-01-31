@@ -12,13 +12,13 @@ export const Header = () => {
             <Image src={logoImg} alt="Logo Intelligent Clin" />
             <Nav>
                 <li>
-                    <a href="#">Quem somos</a>
+                    <a href="#quem-somos">Quem somos</a>
                 </li>
                 <li>
-                    <a href="#">Como funciona</a>
+                    <a href="#como-funciona">Como funciona</a>
                 </li>
                 <li>
-                    <a href="#">Dúvidas</a>
+                    <a href="#duvidas">Dúvidas</a>
                 </li>
                 <li>
                     <a href="#">Planos</a>
