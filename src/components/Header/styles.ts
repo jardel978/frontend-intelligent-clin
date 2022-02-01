@@ -20,38 +20,9 @@ export const ContainerHeader = styled.header`
 export const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 65%;
     margin-right: .7rem;
-    
-    li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        list-style: none;
-        margin-right: 1rem;
-        margin: .4rem;
-        font-size: 1.21rem;
-        
-        a {
-            padding: 1rem;
-        }
-
-        &:hover {
-            
-            filter: brightness(.9);
-
-            &::after {
-                content: '';/* mesmo vazio é importante colocar */
-                position: absolute;
-                height: 3px;
-                border-radius: 3px 3px 0 0; 
-                width: 100%;
-                bottom: .7rem;
-                left: 0;
-                background: var(--texto-titulos);
-            }
-        }
-    }
     
     @media (max-width: 1255px) {
         width: 80%;
@@ -66,7 +37,65 @@ export const Nav = styled.nav`
     }
 `;
 
-export const BtnLogin = styled.li`
+type AncoraAtivoProps = {
+    estaAtivo: boolean;
+    
+}
+
+export const AncoraAtivo = styled.a<AncoraAtivoProps>`
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-right: 1rem;
+    margin: .4rem;
+    font-size: 1.21rem;
+    
+    &:hover {
+        
+        filter: brightness(.9);
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            border-radius: 3px 3px 0 0; 
+            width: 100%;
+            bottom: .7rem;
+            left: 0;
+            background: var(--texto-titulos);
+            animation: sublinhar .3s ease-in-out;
+
+            @keyframes sublinhar {
+                0% {
+                   transform: scaleX(0);
+                } 100% {
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+
+    &${props => props.estaAtivo ? '::after' : 'none'} {
+        content: '';
+        position: absolute;
+        height: 2px;
+        border-radius: 3px 3px 0 0; 
+        width: 100%;
+        bottom: .7rem;
+        left: 0;
+        background: var(--texto-titulos);
+    }
+
+`;
+
+export const BtnLogin = styled.a`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 7rem;
     height: 3rem;
     border-radius: .3rem;
