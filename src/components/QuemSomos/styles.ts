@@ -10,6 +10,9 @@ export const ContainerQuemSomos = styled.div`
 `;
 
 export const ParagrafoQuemSomos = styled.p`
+    font-size: 1.2rem;
+    text-indent: 2rem;
+    margin-bottom: 1rem;
     max-width: 800px;
     align-self: center;
     text-align: justify;

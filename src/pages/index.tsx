@@ -4,6 +4,7 @@ import { Banner } from 'components/Banner';
 import { QuemSomos } from 'components/QuemSomos';
 import { ComoFunciona } from 'components/ComoFunciona';
 import { Duvidas } from 'components/Duvidas';
+import { Planos } from 'components/Planos';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <QuemSomos />
         <ComoFunciona />
         <Duvidas />
+        <Planos />
       </main>
     </>
   )

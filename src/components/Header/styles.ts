@@ -39,7 +39,6 @@ export const Nav = styled.nav`
 
 type AncoraAtivoProps = {
     estaAtivo: boolean;
-    
 }
 
 export const AncoraAtivo = styled.a<AncoraAtivoProps>`
@@ -96,6 +95,7 @@ export const BtnLogin = styled.a`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
     width: 7rem;
     height: 3rem;
     border-radius: .3rem;

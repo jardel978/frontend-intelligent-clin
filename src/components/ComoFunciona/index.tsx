@@ -1,12 +1,13 @@
 import { TituloSection } from 'components/TituloSection';
-import { BsFillInfoSquareFill } from 'react-icons/bs';
-import { BoxBtn, BtnComoFunciona, ContainerComoFunciona, ParagrafoComoFunciona } from './styles';
+import { BsGearWideConnected } from 'react-icons/bs';
+import { BoxBtn, BtnComoFunciona, ContainerComoFunciona, IconeAnimado, ParagrafoComoFunciona } from './styles';
 
 export const ComoFunciona = () => {
+
     return (
         <ContainerComoFunciona id='como-funciona'>
             <TituloSection texto='Como funciona'>
-                <BsFillInfoSquareFill />
+                <IconeAnimado as={BsGearWideConnected} />
             </TituloSection>
             <ParagrafoComoFunciona>
                 A certificação de metodologias que nos auxiliam a lidar com a complexidade dos estudos efetuados promove a alavancagem do levantamento das variáveis envolvidas.

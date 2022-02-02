@@ -11,12 +11,7 @@ import { useEffect, useState } from 'react';
 
 export const Header = () => {
 
-    const [location, setLocation] = useState(window.location.href);
-
-    useEffect(() => {
-        console.log(location);
-    }, [location]);
-
+    // const [location, setLocation] = useState('');
 
     return (
         <ContainerHeader>
@@ -24,19 +19,19 @@ export const Header = () => {
                 <Image src={logoImg} alt="Logo Intelligent Clin" />
             </Link>
             <Nav>
-                <ActiveLink setLocation={setLocation} href="#quem-somos">
+                <ActiveLink href="#quem-somos">
                     <AncoraAtivo estaAtivo>Quem somos</AncoraAtivo>
                 </ActiveLink>
-                <ActiveLink setLocation={setLocation} href="#como-funciona">
+                <ActiveLink href="#como-funciona">
                     <AncoraAtivo estaAtivo>Como funciona</AncoraAtivo>
                 </ActiveLink>
-                <ActiveLink setLocation={setLocation} href="#duvidas">
+                <ActiveLink href="#duvidas">
                     <AncoraAtivo estaAtivo>Dúvidas</AncoraAtivo>
                 </ActiveLink>
-                <ActiveLink setLocation={setLocation} href="#planos">
+                <ActiveLink href="#planos">
                     <AncoraAtivo estaAtivo>Planos</AncoraAtivo>
                 </ActiveLink>
-                <ActiveLink setLocation={setLocation} href="#usar-em-minha-clinica">
+                <ActiveLink href="#usar-em-minha-clinica">
                     <AncoraAtivo estaAtivo>Usar em minha clínica</AncoraAtivo>
                 </ActiveLink>
                 <Link href='/' passHref>

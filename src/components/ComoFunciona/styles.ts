@@ -12,6 +12,8 @@ export const ContainerComoFunciona = styled.div`
 `;
 
 export const ParagrafoComoFunciona = styled.p`
+    font-size: 1.2rem;
+    text-indent: 2rem;
     max-width: 800px;
     align-self: center;
     text-align: justify;
@@ -50,4 +52,18 @@ export const BtnComoFunciona = styled.button<BtnComoFuncionaProps>`
     &:hover {
         filter: brightness(.9);
     }
+`;
+
+export const IconeAnimado = styled.span`
+    animation: rotacionar 5s linear infinite;
+
+    @keyframes rotacionar {
+        0% {
+            transform: rotate(0);
+        }
+        100% {
+            transform: rotate(360deg);
+	    }
+    }
+
 `;

@@ -1,5 +1,4 @@
-import React, { cloneElement, ReactChild, ReactComponentElement, ReactElement } from 'react';
-import { IconType } from 'react-icons';
+import React, { cloneElement, ReactElement } from 'react';
 import { Titulo } from './styles';
 
 type TituloSectionProps = {

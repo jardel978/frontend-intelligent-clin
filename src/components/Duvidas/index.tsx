@@ -1,5 +1,5 @@
 import { TituloSection } from 'components/TituloSection';
-import { BsFillInfoSquareFill } from 'react-icons/bs';
+import { BsPatchQuestionFill } from 'react-icons/bs';
 import { CardDuvida } from './CardDuvida';
 import { ContainerDuvidas } from './styles';
 
@@ -7,7 +7,7 @@ export const Duvidas = () => {
   return (
       <ContainerDuvidas id='duvidas'>
           <TituloSection texto='Dúvidas'>
-            <BsFillInfoSquareFill />
+            <BsPatchQuestionFill />
           </TituloSection>
           <CardDuvida 
             titulo='No mundo atual, o início da atividade geral de formação de atitudes prepara-nos para enfrentar situações atípicas decorrentes do investimento?'
