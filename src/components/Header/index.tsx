@@ -1,46 +1,23 @@
-import { AncoraAtivo, BtnLogin, ContainerHeader, Nav } from './styles';
+import {  ContainerHeader } from './styles';
 
 import Image from 'next/image';
-import { ActiveLink } from './ActiveLink';
 
-import signInImg from 'assets/icons/sign-in.svg';
-// import signInImg from 'assets/icons/sign-in2.svg';
+
 import logoImg from 'assets/logo.svg';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { Navbar } from 'components/Navbar';
 
 export const Header = () => {
 
-    // const [location, setLocation] = useState('');
 
     return (
         <ContainerHeader>
             <Link href={'/'} passHref>
-                <Image src={logoImg} alt="Logo Intelligent Clin" />
+                <a>
+                    <Image src={logoImg} alt="Logo Intelligent Clin" />
+                </a>
             </Link>
-            <Nav>
-                <ActiveLink href="#quem-somos">
-                    <AncoraAtivo estaAtivo>Quem somos</AncoraAtivo>
-                </ActiveLink>
-                <ActiveLink href="#como-funciona">
-                    <AncoraAtivo estaAtivo>Como funciona</AncoraAtivo>
-                </ActiveLink>
-                <ActiveLink href="#duvidas">
-                    <AncoraAtivo estaAtivo>Dúvidas</AncoraAtivo>
-                </ActiveLink>
-                <ActiveLink href="#planos">
-                    <AncoraAtivo estaAtivo>Planos</AncoraAtivo>
-                </ActiveLink>
-                <ActiveLink href="#usar-em-minha-clinica">
-                    <AncoraAtivo estaAtivo>Usar em minha clínica</AncoraAtivo>
-                </ActiveLink>
-                <Link href='/' passHref>
-                    <BtnLogin>
-                        <Image width={30} height={30} src={signInImg} alt="Fazer login" />
-                        <strong style={{ marginLeft: '.3rem' }}>Login</strong>
-                    </BtnLogin>
-                </Link>
-            </Nav>
+            <Navbar componentePai='header' />
         </ContainerHeader>
     )
 };

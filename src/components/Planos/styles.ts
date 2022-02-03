@@ -1,4 +1,3 @@
-import { type } from "os";
 import styled from "styled-components";
 
 export const ContainerPlanos = styled.section`
@@ -6,7 +5,7 @@ export const ContainerPlanos = styled.section`
     flex-flow: column wrap;
     width: 100%;
     margin-top: 2rem;
-    `;
+`;
 
 export const BannerPlanos = styled.div`
     position: relative;
@@ -16,6 +15,16 @@ export const BannerPlanos = styled.div`
 
 type ParagrafoBannerPlanosProps = {
     animar: boolean;
+    animationDelay: number;
+}
+
+function removerVisibilidadeAnimacao(animar: boolean, tempoDelay: number) {
+    if (animar) {
+        setTimeout(() => {
+            return true;
+        }, tempoDelay * 1000 + 3000);
+    } else
+        return false;
 }
 
 export const ParagrafoBannerPlanos = styled.div<ParagrafoBannerPlanosProps>`
@@ -26,11 +35,14 @@ export const ParagrafoBannerPlanos = styled.div<ParagrafoBannerPlanosProps>`
     p {
         border-right: 1px #284949 solid;
         animation:${props => props.animar ? 
-            'cursorTexto 500ms infinite normal, digitando 4s 1s infinite normal' : 
-                'cursorTexto 500ms infinite normal'};
+            `cursorTexto 500ms infinite normal steps(50), digitando 3.2s ${props.animationDelay}s normal steps(50) forwards` : 
+                `cursorTexto 500ms infinite normal steps(50), retirarTexto ${props.animationDelay + 3}s normal forwards`};
         white-space: nowrap;
         overflow: hidden;
         margin: 5px;
+        opacity: ${props => removerVisibilidadeAnimacao(props.animar, props.animationDelay) ?
+            '1' : '0'
+        };
 
         @keyframes cursorTexto {
             from {
@@ -39,13 +51,37 @@ export const ParagrafoBannerPlanos = styled.div<ParagrafoBannerPlanosProps>`
                 border-right-color: transparent;
             }
         }
+
         @keyframes digitando {
             from {
                 width: 0%;
+                opacity: .3;
             } to {
                 width: 100%;
+                opacity: 1;
             }
         }
+
+        @keyframes retirarTexto {
+            0% {
+                opacity: 1;
+            } 95% {
+                opacity: 0.5;
+            } 100% {
+                opacity: 0;
+            }
+        }
+    }
+
+    @media (max-width: 1124px) {
+        font-size: 1.3rem;
+    }
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
+    @media (max-width: 540px) {
+        font-size: .8rem;
+        font-weight: 500;
     }
 `;
 
@@ -57,7 +93,7 @@ export const BoxPlanos = styled.div`
     padding: 1rem;
     margin-top: 1rem;
 
-    @media (max-width: 820px) {
+    @media (max-width: 912px) {
         flex-flow: column wrap;
     }
 `;
@@ -82,7 +118,7 @@ export const ContainerPlano = styled.article`
         font-size: 1.3rem;
     }    
     
-    @media (max-width: 820px) {
+    @media (max-width: 1014px) {
         width: 340px;
         height: 530px;
 

@@ -13,7 +13,7 @@ export const Planos = () => {
 
     const toggleAnimar = setTimeout(() => {
         setAnimar(!animar);
-    }, 5000);
+    }, 9600);
 
     useEffect(() => {
         toggleAnimar
@@ -31,24 +31,37 @@ export const Planos = () => {
                     <Image src={planosImg} layout="responsive" alt="Temos os melhores planos para voçê." />
                     <ParagrafoBannerPlanos
                         animar={animar}
+                        animationDelay={0.2}
                         style={{
                             top: '10%',
-                            width: '25%',
-                            height: '10%'
+                            width: 'max-content',
+                            height: 'max-content'
                         }}>
                         <p>Temos um plano ideal para você.</p>
                     </ParagrafoBannerPlanos>
                     <ParagrafoBannerPlanos
                         animar={animar}
+                        animationDelay={3.2}
                         style={{
                             top: '30%',
-                            width: '45%',
-                            height: '20%',
+                            width: 'max-content',
+                            height: 'max-content',
                         }}>
                         <p>Sem recursos desnecessários sua clínica é atendida</p>
-                        <p> de acordo com o que necessita e ainda economiza com isso!</p>
+                    </ParagrafoBannerPlanos>
+                    <ParagrafoBannerPlanos
+                        animar={animar}
+                        animationDelay={6.2}
+                        style={{
+                            top: '40%',
+                            width: 'max-content',
+                            height: 'max-content',
+                            marginTop: '5px',
+                        }}>
+                        <p>de acordo com o que necessita e ainda economiza com isso!</p>
                     </ParagrafoBannerPlanos>
                 </BannerPlanos>
+                
                 <BoxPlanos>
                     <ContainerPlano>
                         <h3>Plano Premium I</h3>
