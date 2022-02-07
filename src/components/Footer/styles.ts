@@ -8,7 +8,7 @@ export const Container = styled.footer`
     flex-direction: column;
     width: 100%;
     background: #39CCBB;
-    margin-top: 10%;
+    margin-top: 15%;
     padding: 1.9rem;
 
     span {
@@ -33,7 +33,10 @@ export const Container = styled.footer`
             box-shadow: 10px 5px 12px -3px rgba(40,73,73,0.75);
         }
 
-        /* @media (max-width: px) */
+    }
+    
+    @media (max-width: 768px) {
+        margin-top: 25%;
     }
 `;
 
