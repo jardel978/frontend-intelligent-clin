@@ -30,7 +30,7 @@ export const Navbar = ({ componentePai }: NavbarProps) => {
             <ActiveLink href="#usar-em-minha-clinica">
                 <AncoraAtivo estaAtivo>Usar em minha clínica</AncoraAtivo>
             </ActiveLink>
-            <Link href='/' passHref>
+            <Link href='/login' passHref>
                 {componentePai === 'header' ?
                     <BtnLogin>
                         <Image width={30} height={30} src={signInImg} alt="Fazer login" />

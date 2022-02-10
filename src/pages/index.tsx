@@ -1,5 +1,6 @@
 import { GlobalStyle } from '../styles/globals';
 
+import { Header } from 'components/Header';
 import { Banner } from 'components/Banner';
 import { QuemSomos } from 'components/QuemSomos';
 import { ComoFunciona } from 'components/ComoFunciona';
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <>
       <GlobalStyle />
+      <Header />
       <Banner />
       <main>
         <QuemSomos />
