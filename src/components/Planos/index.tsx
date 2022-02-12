@@ -17,6 +17,7 @@ export const Planos = () => {
 
     useEffect(() => {
         toggleAnimar
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [animar]);
 
 

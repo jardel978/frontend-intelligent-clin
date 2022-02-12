@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import logoImg from 'assets/logo.svg';
+import { useContext } from 'react';
+import { AuthContext } from 'contexts/AuthContext';
+import { withSSRGuest } from 'utils/withSSRGuest';
 
 type InitialValuesTypes = {
     email: string;
@@ -17,6 +20,7 @@ export const FormLogin: React.FC<{}> = () => {
         senha: '',
     };
 
+    const { signIn } = useContext(AuthContext);
 
     const validarForm = Yup.object().shape({
         email: Yup.string()
@@ -27,16 +31,17 @@ export const FormLogin: React.FC<{}> = () => {
             .min(6, 'Sua senha deve ter no mínimo 6 dígitos'),
     });
 
+    async function handleSubmit(values: InitialValuesTypes) {
+        await signIn(values);
+    }
+
     return (
         <ContainerLogin>
-
             <BoxForm>
-
                 <Formik
                     initialValues={initialValues}
                     onSubmit={(values, actions) => {
-                        console.log({ values, actions });
-                        alert(JSON.stringify(values, null, 2));
+                        handleSubmit(values);
                         actions.setSubmitting(false);
                     }}
                     validationSchema={validarForm}
@@ -72,13 +77,17 @@ export const FormLogin: React.FC<{}> = () => {
                     )}
                 </Formik>
 
-                {/* <Image src={logoImg} alt="Logo Intelligent Clin" /> */}
                 <video autoPlay loop muted >
-                    <source src='assets/videos/bkgLogin.mp4' type="video/mp4" />
+                    <source src={require("assets/videos/bkgLogin.mp4")} type="video/mp4" />
                 </video>
-                {/* <video src='https://youtu.be/ZaYvwn9nBD4' /> */}
 
             </BoxForm>
         </ContainerLogin>
     )
 };
+
+export const getServerSideProps = withSSRGuest(async (ctx) => {
+    return {
+        props: {}
+    }
+});

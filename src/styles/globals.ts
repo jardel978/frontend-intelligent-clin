@@ -45,4 +45,18 @@ export const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+
+  .swal2-popup {
+    width: 450px;
+    height: 400px;
+    
+    .swal2-html-container {
+      font-size: 1.3rem !important;
+      font-weight: 500;
+    }
+
+    .swal2-confirm {
+      width: 80px;
+    }
+  }
 `;

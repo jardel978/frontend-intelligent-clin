@@ -41,8 +41,8 @@ export const FormContato: React.FC<{}> = () => {
         <Formik
             initialValues={initialValues}
             onSubmit={(values, actions) => {
-                console.log({ values, actions });
-                alert(JSON.stringify(values, null, 2));
+                // console.log({ values, actions });
+                // alert(JSON.stringify(values, null, 2));
                 actions.setSubmitting(false);
             }}
             validationSchema={validarForm}>
