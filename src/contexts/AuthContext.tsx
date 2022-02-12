@@ -70,8 +70,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
                     authChannel.close();
                     break;
                 case "signIn":
-                    // window.location.replace('http://localhost:3000/dashboard');
-                    window.location.replace('https://intelligen-clin.vercel.app/');//alterar url para a do servidor vercel
+                    window.location.replace('http://localhost:3000/dashboard');
+                    // window.location.replace('https://intelligen-clin.vercel.app/dashboard');
                     break;
                 default:
                     break;
