@@ -1,14 +1,11 @@
+import { UsuarioAuthType } from "types/UsuarioTypes";
+
 import Router from "next/router";
 import { destroyCookie, parseCookies, setCookie } from "nookies";
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { api } from "services/apiClient";
 import Swal from "sweetalert2";
 
-type Usuario = {
-    email: string;
-    permissions: string[];
-    role: string;
-}
 
 type SignInCredentials = {
     email: string;
@@ -18,13 +15,14 @@ type SignInCredentials = {
 type AuthContextData = {
     signIn(credentials: SignInCredentials): Promise<void>;
     signOut(): void;
-    usuario: Usuario | undefined;
+    usuario: UsuarioAuthType | undefined;
     estaAutenticado: boolean;
+    isFetching: boolean;
 };
 
 type AuthProviderProps = {
     children: ReactNode;
-};
+}
 
 export const AuthContext = createContext({} as AuthContextData);
 
@@ -40,13 +38,15 @@ export function signOut() {
 
 export function AuthProvider({ children }: AuthProviderProps) {
 
-    const [usuario, setUsuario] = useState<Usuario>();
+    const [usuario, setUsuario] = useState<UsuarioAuthType>();
+    const [isFetching, setIsFetching] = useState(false);
     const estaAutenticado = !!usuario;
 
     useEffect(() => {
         const { 'intelligent.clin.token': token } = parseCookies();
 
         if (token) {
+            setIsFetching(true);
             api.get('/usuarios/me').then(response => {
                 const { email, permissions, role } = response.data;
                 setUsuario({
@@ -54,8 +54,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
                     permissions,
                     role
                 })
+                Router.push('/dashboard');
             }).catch(() => {
                 signOut();
+            }).finally(() => {
+                setIsFetching(false);
             })
         }
     }, []);
@@ -127,7 +130,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
 
     return (
-        <AuthContext.Provider value={{ signIn, signOut, usuario, estaAutenticado }}>
+        <AuthContext.Provider value={{ signIn, signOut, usuario, estaAutenticado, isFetching }}>
             {children}
         </AuthContext.Provider>
     );

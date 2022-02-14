@@ -1,24 +1,21 @@
-import { GlobalStyle } from '../styles/globals';
-
-import { Header } from 'components/Header';
-import { Banner } from 'components/Banner';
-import { QuemSomos } from 'components/QuemSomos';
-import { ComoFunciona } from 'components/ComoFunciona';
-import { Duvidas } from 'components/Duvidas';
-import { Planos } from 'components/Planos';
+import { HeaderHome } from 'components/homePage/HeaderHome';
+import { Banner } from 'components/homePage/Banner';
+import { QuemSomos } from 'components/homePage/QuemSomos';
+import { ComoFunciona } from 'components/homePage/ComoFunciona';
+import { Duvidas } from 'components/homePage/Duvidas';
+import { Planos } from 'components/homePage/Planos';
 import dynamic from 'next/dynamic';
 
 const UsarEmMinhaClinica = dynamic(
-  () => import('components/UsarEmMinhaClinica').then((mod) => mod.UsarEmMinhaClinica),
+  () => import('components/homePage/UsarEmMinhaClinica').then((mod) => mod.UsarEmMinhaClinica),
   { ssr: false }
 );
-import { Footer } from 'components/Footer';
+import { FooterHome } from 'components/homePage/FooterHome';
 
 export default function Home() {
   return (
     <>
-      <GlobalStyle />
-      <Header />
+      <HeaderHome />
       <Banner />
       <main>
         <QuemSomos />
@@ -27,7 +24,7 @@ export default function Home() {
         <Planos />
         <UsarEmMinhaClinica />
       </main>
-      <Footer />
+      <FooterHome />
     </>
   )
 }

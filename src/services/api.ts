@@ -18,8 +18,8 @@ export function setupApiClient(ctx: Context = undefined) {
     let cookies = parseCookies(ctx);
 
     const api = axios.create({
-        // baseURL: 'http://localhost:8080',
-        baseURL: 'https://intelligent-clin.herokuapp.com/',
+        baseURL: 'http://localhost:8080',
+        // baseURL: 'https://intelligent-clin.herokuapp.com/',
         headers: {
             Authorization: `Bearer ${cookies['intelligent.clin.token']}`
         }

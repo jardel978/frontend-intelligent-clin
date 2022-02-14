@@ -1,11 +1,9 @@
-import { FormLogin } from 'components/FormLogin';
-import { GlobalStyle } from 'styles/globals';
+import { FormLogin } from "components/FormLogin";
 
 export default function Login() {
 
     return (
         <>
-            <GlobalStyle />
             <FormLogin />
         </>
     )

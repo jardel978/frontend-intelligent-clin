@@ -1,9 +1,11 @@
-import { BoxForm, BoxInputLogin, ContainerLogin } from 'components/FormLogin/styles';
+import { BoxForm, BoxInputLogin, ContainerLogin } from './styles';
+
+import logoImg from 'assets/logo.svg';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import logoImg from 'assets/logo.svg';
 import { useContext } from 'react';
 import { AuthContext } from 'contexts/AuthContext';
 import { withSSRGuest } from 'utils/withSSRGuest';
@@ -20,7 +22,7 @@ export const FormLogin: React.FC<{}> = () => {
         senha: '',
     };
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn, isFetching } = useContext(AuthContext);
 
     const validarForm = Yup.object().shape({
         email: Yup.string()
@@ -71,7 +73,7 @@ export const FormLogin: React.FC<{}> = () => {
                             </BoxInputLogin>
 
                             <button type="submit" disabled={isSubmitting}>
-                                Entrar
+                                {isFetching ? 'carregando...' : 'Entrar'}
                             </button>
                         </Form>
                     )}
